@@ -2,26 +2,31 @@
 
 const router = require('express').Router();
 const fetch = require('node-fetch');
-const key = require('../../../config/env').MOVIE_DB_KEY;
+const MOVIE_DB_KEY = require('../../../config/env').MOVIE_DB_KEY;
+const MAX_AGE = require('../../../config/env').MAX_AGE;
 
 const cache = {};
+
+const checkCache = function (page) {
+	return cache[page] && (Date.now() - cache[page].time) <= MAX_AGE;
+};
 
 router.get('/:page', function (req, res, next) {
 	const page = req.params.page;
 
-	if (!cache[page]) next();
-	else res.json(cache[page]);
+	if (!checkCache(page)) next();
+	else res.json(cache[page].data);
 });
 
 router.get('/:page', function (req, res, next) {
 	const page = req.params.page || '1';
-	const query = `?api_key=${key}&page=${page}`;
+	const query = `?api_key=${MOVIE_DB_KEY}&page=${page}`;
 	const url = `http://api.themoviedb.org/3/movie/now_playing${query}`;
 
 	fetch(url)
 		.then(response => response.json())
-		.then(response => cache[page] = response)
-		.then(() => res.json(cache[page]))
+		.then(response => cache[page] = { data: response, time: Date.now() })
+		.then(() => res.json(cache[page].data))
 		.catch(next);
 })
 
