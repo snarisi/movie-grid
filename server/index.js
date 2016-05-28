@@ -12,10 +12,10 @@ app.use(function(req, res, next) {
 });
 
 // api
-app.use('/api', require('./api'));
+app.use(require('./routes'));
 
 // static routes
-app.use(require('./static'));
+app.use(require('./config/staticRouting'));
 
 // catch-all route to load index.html
 app.get('*', function (req, res, next) {
