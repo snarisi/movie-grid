@@ -29,3 +29,5 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(port, () => console.log('Sever listening on port ', port));
+
+module.exports = app;
