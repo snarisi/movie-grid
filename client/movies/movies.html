@@ -9,7 +9,8 @@
 	ng-if="page + 1 <= totalPages">
 	<h3>Next Page</h3>
 </a>
-<div ng-repeat="movie in movies">
-	<p>{{movie.title}}</p>
-	<img ng-src="{{posterUrl(movie.poster_path)}}" alt="{{movie.title}} poster">
+<div class="movie-container">
+	<div ng-repeat="movie in movies">
+		<img ng-src="{{posterUrl(movie.poster_path)}}" alt="{{movie.title}} poster">
+	</div>
 </div>

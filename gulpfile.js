@@ -1,8 +1,11 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
+const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const rename = require('gulp-rename');
 const ngAnnotate = require('gulp-ng-annotate');
 const runSequence = require('run-sequence');
 
@@ -16,9 +19,26 @@ gulp.task('buildJS', () => {
 		.pipe(gulp.dest('./public'));
 });
 
+gulp.task('buildCSS', function () {
+
+  var sassCompilation = sass();
+  sassCompilation.on('error', console.error.bind(console));
+
+  return gulp.src('./client/stylesheets/main.scss')
+	  .pipe(plumber({
+	      errorHandler: notify.onError('SASS processing failed! Check your gulp process.')
+	  }))
+	  .pipe(sourcemaps.init())
+	  .pipe(sassCompilation)
+	  .pipe(sourcemaps.write())
+	  .pipe(rename('style.css'))
+	  .pipe(gulp.dest('./public'));
+});
+
+gulp.task('build', ['buildJS', 'buildCSS']);
+
 gulp.task('default', function () {
-	gulp.start('buildJS');
-	gulp.watch('client/**', function () {
-		runSequence('buildJS');
-	});
+	gulp.start('build');
+	gulp.watch('client/**', ['buildJS']);
+	gulp.watch('client/stylesheets/**', ['buildCSS']);
 });

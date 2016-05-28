@@ -6,7 +6,7 @@ angular.module('movieGrid').controller('MoviesCtrl', function ($scope, movies) {
 	$scope.totalPages = movies.total_pages;
 
 	$scope.posterUrl = function (path) {
-		return `http://image.tmdb.org/t/p/w342${path}`;
+		return `http://image.tmdb.org/t/p/w185${path}`;
 	}
 
 	console.log(movies);

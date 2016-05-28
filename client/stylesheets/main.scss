@@ -1,0 +1,11 @@
+.movie-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1350px;
+
+	img {
+		width: 256px;
+		height: 383px;
+	}
+}
