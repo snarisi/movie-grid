@@ -4,7 +4,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = process.env.PORT || 8080;
-const api = require('./api');
 
 // logging
 app.use(function(req, res, next) {
@@ -12,20 +11,15 @@ app.use(function(req, res, next) {
 	next();
 });
 
-// static routes
-const publicPath = path.join(__dirname, '../public');
-const nodeModulesPath = path.join(__dirname, '../node_modules');
-const clientPath = path.join(__dirname, '../client');
-app.use(express.static(publicPath));
-app.use(express.static(nodeModulesPath));
-app.use(express.static(clientPath));
-
 // api
-app.use('/api', api);
+app.use('/api', require('./api'));
+
+// static routes
+app.use(require('./static'));
 
 // catch-all route to load index.html
 app.get('*', function (req, res, next) {
-	res.sendFile(`${publicPath}/index.html`)
+	res.sendFile(path.join(__dirname, '../public/index.html'))
 });
 
 // error handling
