@@ -1,0 +1,15 @@
+<h3>Page {{page}}</h3>
+<a
+	ui-sref="movies({ page: page - 1})"
+	ng-if="page - 1 > 0">
+	<h3>Previous Page</h3>
+</a>
+<a
+	ui-sref="movies({ page: page + 1})"
+	ng-if="page + 1 <= totalPages">
+	<h3>Next Page</h3>
+</a>
+<div ng-repeat="movie in movies">
+	<p>{{movie.title}}</p>
+	<img ng-src="{{posterUrl(movie.poster_path)}}" alt="{{movie.title}} poster">
+</div>
