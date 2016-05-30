@@ -2,12 +2,12 @@
 
 angular.module('movieGrid').controller('MoviesCtrl', function ($scope, movies) {
 	$scope.movies = movies.results;
-	$scope.page = movies.page;
-	$scope.totalPages = movies.total_pages;
+	$scope.page = {
+		current: movies.page,
+		total: movies.total_pages
+	};
 
 	$scope.posterUrl = function (path) {
 		return `http://image.tmdb.org/t/p/w185${path}`;
 	}
-
-	console.log(movies);
 });

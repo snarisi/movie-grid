@@ -1,0 +1,39 @@
+<div class="page-nav-container">
+	<button
+		class="text"
+		ui-sref="movies({ page: 1 })"
+		ng-disabled="page.current === 1">
+		First
+	</button>
+	<button
+		class="text"
+		ui-sref="movies({ page: page.current - 1 })"
+		ng-disabled="page.current === 1">
+		Prev
+	</button>
+
+	<button
+		class="number"
+		ng-repeat="p in listPages()"
+		ui-sref="movies({ page: p })"
+		ng-disabled="p === page.current">
+		{{p}}
+	</button>
+	<button
+		class="number">
+		...
+	</button>
+
+	<button
+		class="text"
+		ui-sref="movies({ page: page.current + 1 })"
+		ng-disabled="page.current === page.total">
+		Next
+	</button>
+	<button
+		class="text"
+		ui-sref="movies({ page: page.total })"
+		ng-disabled="page.current === page.total">
+		Last
+	</button>
+</div>
