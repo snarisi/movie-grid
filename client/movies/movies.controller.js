@@ -15,23 +15,21 @@ angular.module('movieGrid').controller('MoviesCtrl', function ($scope, movies) {
 	}
 
 	$scope.modalInfo = {
-		show: false,
 		index: null,
 		movie: null
 	};
 
 	$scope.openModal = function (idx) {
+		$scope.modalInfo.index = idx;
 		$scope.modalInfo.movie = $scope.movies[idx];
-		$scope.modalInfo.show = true;
 	};
 
 	$scope.closeModal = function () {
-		$scope.modalInfo.show = false;
 		$scope.modalInfo.movie = null;
 	};
 
 	$scope.nextModal = function () {
-		$scope.modalInfo.index++;
+		$scope.modalInfo.index = ($scope.modalInfo.index + 1) % $scope.movies.length;
 		$scope.modalInfo.movie = $scope.movies[$scope.modalInfo.index];
 	};
 });
