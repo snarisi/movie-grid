@@ -44,12 +44,33 @@ $blur-distance: 10px;
 	}
 
 	.modal-details {
-		display: flex;
+		&.desktop-view {
+			display: flex;
+		}
+		&.mobile-view {
+			display: none;
+			font-size: 14px;
+		}
 		justify-content: center;
-		align-items: center;
-		padding: 60px;
+		align-items: top;
+		padding: 40px;
 		.modal-text {
-			padding-left: 60px;
+			padding-left: 40px;
+		}
+
+		.modal-details-top {
+			display: flex;
+			ul {
+				list-style: none;
+				margin: 0;
+				padding-left: 20px;
+				li {
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.modal-details-bottom {
+			margin-top: 40px;
 		}
 	}
 }
