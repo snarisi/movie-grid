@@ -8,6 +8,8 @@ angular.module('movieGrid').controller('MoviesCtrl', function ($scope, movies) {
 	};
 
 	$scope.posterUrl = function (path) {
+		if (!path) return 'images/poster_placeholder.jpg';
+
 		return `http://image.tmdb.org/t/p/w185${path}`;
 	}
 });
