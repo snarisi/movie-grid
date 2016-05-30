@@ -1,0 +1,21 @@
+.page-nav-container {
+	display: flex;
+	justify-content: center;
+	margin: 20px auto 40px auto;
+	max-width: 700px;
+	button {
+		flex: 0 1 auto;
+		cursor: pointer;
+		border-radius: 0;
+		border-style: solid;
+		border-width: 1px 1px 1px 0px;
+		&:first-child {
+			border-width: 1px;
+		}
+		border-color: #999;
+		padding: 6px 12px;
+		font-size: 14px;
+		color: $font-color;
+		background-color: transparent;
+	}
+}
