@@ -1,10 +1,20 @@
 $image-width: 200;
-$image-height: $image-width * 1.5;
+$mobile-image-width: 160;
+$modal-image-width: 185;
+$mobile-modal-image-width: 120;
+
+@function calculate-height($width) {
+  @return $width * 1.5
+}
+
 $font-color: #999;
 $green-font-color: #4AAD8A;
+
 $dark-bg: #373D48;
 $light-bg: #EEF0F1;
+
 $max-page-width: 1200px;
+$min-page-width: 360px;
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -19,23 +29,13 @@ body {
 
 #main {
 	max-width: $max-page-width;
+  min-width: $min-page-width;
 	padding: 60px 20px 0 20px;
 	margin: 0 auto;
 }
 
 .no-margin {
   margin: 0;
-}
-
-.movie-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	img {
-		width: $image-width + px;
-		height: $image-height + px;
-		margin: 10px 5px;
-	}
 }
 
 .shadow {
@@ -55,9 +55,15 @@ body {
 
 .green {
   color: $green-font-color;
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 600;
 }
 
 @import 'navbar';
 @import 'pagenav';
+@import 'movies';
 @import 'detail-modal';
 @import 'media-queries';

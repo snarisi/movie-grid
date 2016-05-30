@@ -15,52 +15,41 @@
 		</div>
 	</div>
 
-	<div class="modal-details desktop-view">
+	<div class="modal-details">
 
 		<img
 			ng-src="{{posterUrl(modalInfo.movie.poster_path)}}"
 			alt="{{modalInfo.movie.title}} poster">
 		<div class="modal-text">
-			<h2 class="no-margin">{{modalInfo.movie.title}} ({{getYear()}})</h2>
-			<p>
-				Score: {{modalInfo.movie.vote_average}} |
-				Votes: {{modalInfo.movie.vote_count}} |
-				Release Date: {{modalInfo.movie.release_date | date}}
-			</p>
-			<hr>
-			<p>{{modalInfo.movie.overview}}</p>
-			<hr>
-		</div>
-
-	</div>
-
-	<div class="modal-details mobile-view">
-
-		<div class="modal-details-top">
-			<img
-				ng-src="{{posterUrl(modalInfo.movie.poster_path)}}"
-				alt="{{modalInfo.movie.title}} poster">
+			<h2 class="desktop-view no-margin">{{modalInfo.movie.title}} ({{getYear()}})</h2>
 			<ul>
 				<li>
-					<h3 class="no-margin">Score:</h3>
-					<div>{{modalInfo.movie.vote_average}}</div>
+					<span class="bold">Score:</span>
+					<span>{{modalInfo.movie.vote_average}}</span>
 				</li>
 				<li>
-					<h3 class="no-margin">Votes:</h3>
-					<div>{{modalInfo.movie.vote_count}}</div>
+					<span class="bold">Votes:</span>
+					<span>{{modalInfo.movie.vote_count}}</span>
 				</li>
 				<li>
-					<h3 class="no-margin">Release Date:</h3>
-					<div>{{modalInfo.movie.release_date | date}}</div>
+					<span class="bold">Release Date:</span>
+					<span>{{modalInfo.movie.release_date | date}}</span>
 				</li>
 			</ul>
+			<div class="desktop-view">
+				<hr>
+				<p>{{modalInfo.movie.overview}}</p>
+				<hr>
+			</div>
 		</div>
+	</div>
 
-		<div class="modal-details-bottom">
-			<h2>{{modalInfo.movie.title}} ({{getYear()}})</h2>
+	<div class="mobile-view modal-details-bottom">
+		<h2 class="no-margin">{{modalInfo.movie.title}} ({{getYear()}})</h2>
+		<div>
 			<hr>
 			<p>{{modalInfo.movie.overview}}</p>
 			<hr>
 		</div>
-
+	</div>
 </div>

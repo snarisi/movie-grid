@@ -6,6 +6,7 @@ $blur-distance: 10px;
 	position: fixed;
 	top: 80px;
 	left: 10vw;
+	min-width: $min-page-width;
 }
 
 .modal-background-container {
@@ -15,7 +16,7 @@ $blur-distance: 10px;
 .modal-background {
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100%;
+	background-size: 150%;
 	background-blend-mode: multiply;
 	background-color: $dark-bg;
 	-webkit-filter: blur($blur-distance);
@@ -39,23 +40,38 @@ $blur-distance: 10px;
 	}
 
 	img {
-		height: 278px;
-		width: 185px;
+		width: $modal-image-width + px;
+		height: calculate-height($modal-image-width) + px;
+	}
+
+	.desktop-view {
+		display: block;
+	}
+	.mobile-view {
+		display: none;
 	}
 
 	.modal-details {
-		&.desktop-view {
-			display: flex;
-		}
-		&.mobile-view {
-			display: none;
-			font-size: 14px;
-		}
+		display: flex;
 		justify-content: center;
 		align-items: top;
 		padding: 40px;
 		.modal-text {
 			padding-left: 40px;
+			ul {
+				display: flex;
+				list-style: none;
+				padding-left: 0;
+				li {
+					&:after {
+						content: '|';
+						padding: 0 10px;
+					}
+					&:last-child:after {
+						content: '';
+					}
+				}
+			}
 		}
 
 		.modal-details-top {
@@ -69,8 +85,9 @@ $blur-distance: 10px;
 				}
 			}
 		}
-		.modal-details-bottom {
-			margin-top: 40px;
-		}
+	}
+
+	.modal-details-bottom {
+		padding: 0 40px;
 	}
 }

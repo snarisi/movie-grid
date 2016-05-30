@@ -1,0 +1,11 @@
+.movie-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	img {
+		width: $image-width + px;
+		height: calculate-height($image-width) + px;
+		margin: 10px 5px;
+		cursor: pointer;
+	}
+}

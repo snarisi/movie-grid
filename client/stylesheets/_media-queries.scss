@@ -1,24 +1,58 @@
 @media (max-width: 768px) {
+	#main {
+		padding: 60px 10px 0 10px;
+	}
+
+	.movie-container {
+		img {
+			width: $mobile-image-width + px;
+			height: calculate-height($mobile-image-width) + px;
+		}
+	}
+
+	.page-nav-container {
+		button {
+			padding: 3px 6px;
+		}
+	}
+
 	.modal-container {
 		.modal-details {
-			&.mobile-view {
-				display: block;
-			}
-			&.desktop-view {
-				display: none;
+			justify-content: flex-start;
+			padding: 0 40px 20px 40px;
+			.modal-text {
+				padding-left: 20px;
+				ul {
+					display: block;
+					margin: 0;
+					li {
+						&:after {
+							content: '';
+						}
+						span {
+							display: block;
+						}
+					}
+				}
 			}
 		}
 
+		.mobile-view {
+			display: block;
+		}
+		.desktop-view {
+			display: none;
+		}
+
 		img {
-			width: 120px;
-			height: 180px;
+			width: $mobile-modal-image-width + px;
+			height: calculate-height($mobile-modal-image-width) + px;
 		}
 	}
 
 	.modal-container, .modal-background, .modal-background-container {
 		width: 100vw;
 		height: 100vh;
-		position: fixed;
 		top: 0;
 		left: 0;
 		padding-top: 60px;
