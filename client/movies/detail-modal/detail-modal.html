@@ -1,0 +1,36 @@
+<div class="modal-background-container">
+	<div
+		class="modal-background"
+		ng-style="{'background-image': 'url(' + posterUrl(modalInfo.movie.poster_path) + ')'}">
+	</div>
+</div>
+
+<div class="modal-container">
+	<div class="modal-nav">
+		<div ng-click="closeModal()">
+			<i class="fa fa-arrow-circle-o-left"></i> Back to list
+		</div>
+		<div ng-click="nextModal()">
+			Next movie <i class="fa fa-arrow-circle-o-right"></i>
+		</div>
+	</div>
+
+	<div class="modal-details">
+
+		<img
+			ng-src="{{posterUrl(modalInfo.movie.poster_path)}}"
+			alt="{{modalInfo.movie.title}} poster">
+		<div class="modal-text">
+			<h2>{{modalInfo.movie.title}} ({{getYear()}})</h2>
+			<p>
+				Score: {{modalInfo.movie.vote_average}} |
+				Votes: {{modalInfo.movie.vote_count}} |
+				Release Date: {{modalInfo.movie.release_date | date}}
+			</p>
+			<hr>
+			<p>{{modalInfo.movie.overview}}</p>
+			<hr>
+		</div>
+
+	</div>
+</div>

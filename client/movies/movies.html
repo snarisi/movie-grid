@@ -4,8 +4,16 @@
 		<img
 			ng-src="{{posterUrl(movie.poster_path)}}"
 			alt="{{movie.title}} poster"
-			class="shadow shadow-hover">
+			class="shadow shadow-hover"
+			ng-click="openModal($index)">
 	</div>
 </div>
 
 <page-nav page="page"></page-nav>
+
+<detail-modal
+	ng-show="modalInfo.movie"
+	modal-info="modalInfo"
+	on-close="closeModal()"
+	on-next="nextModal()">
+</detail-modal>

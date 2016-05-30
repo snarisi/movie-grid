@@ -1,0 +1,55 @@
+$blur-distance: 10px;
+
+.modal-container, .modal-background, .modal-background-container {
+	height: 80vh;
+	width: 80vw;
+	position: fixed;
+	top: 80px;
+	left: 10vw;
+}
+
+.modal-background-container {
+	border: 100px solid $dark-bg;
+}
+
+.modal-background {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	background-blend-mode: multiply;
+	background-color: $dark-bg;
+	-webkit-filter: blur($blur-distance);
+	-moz-filter: blur($blur-distance);
+	-o-filter: blur($blur-distance);
+	-ms-filter: blur($blur-distance);
+	filter: blur($blur-distance);
+}
+
+.modal-container {
+	color: white;
+
+	.modal-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 40px;
+		div {
+			cursor: pointer;
+		}
+	}
+
+	img {
+		height: 278px;
+		width: 185px;
+	}
+
+	.modal-details {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 60px;
+		.modal-text {
+			padding-left: 60px;
+		}
+	}
+}

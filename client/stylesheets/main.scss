@@ -19,7 +19,7 @@ body {
 
 #main {
 	max-width: $max-page-width;
-	padding: 0 20px;
+	padding: 60px 20px 0 20px;
 	margin: 0 auto;
 }
 
@@ -55,3 +55,4 @@ body {
 
 @import 'navbar';
 @import 'pagenav';
+@import 'detail-modal';

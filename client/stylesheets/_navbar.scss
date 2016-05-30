@@ -1,5 +1,10 @@
 .navbar-container {
 	background-color: $dark-bg;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 2;
 	.navbar-items {
 		height: 60px;
 		display: flex;
