@@ -39,6 +39,6 @@ gulp.task('build', ['buildJS', 'buildCSS']);
 
 gulp.task('default', function () {
 	gulp.start('build');
-	gulp.watch('client/**', ['buildJS']);
-	gulp.watch('client/stylesheets/**', ['buildCSS']);
+	gulp.watch('client/app/**', ['buildJS']);
+	gulp.watch('client/assets/stylesheets/**', ['buildCSS']);
 });

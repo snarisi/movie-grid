@@ -2,10 +2,32 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+
 	img {
 		width: $image-width + px;
 		height: calculate-height($image-width) + px;
 		margin: 10px 5px;
 		cursor: pointer;
+	}
+
+	.tooltip {
+		visibility: hidden;
+		position: absolute;
+		width: $image-width + px;
+		min-height: 80px;
+		margin: 10px 0 0 5px;
+		padding: 10px;
+		text-align: center;
+		background-color: $dark-bg;
+		color: white;
+		opacity: 0.9;
+		cursor: pointer;
+	}
+
+	.movie-poster:hover {
+		opacity: 0.95;
+		.tooltip {
+			visibility: visible;
+		}
 	}
 }

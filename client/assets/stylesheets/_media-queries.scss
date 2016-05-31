@@ -19,6 +19,9 @@
 			width: $mobile-image-width + px;
 			height: calculate-height($mobile-image-width) + px;
 		}
+		.tooltip {
+			width: $mobile-image-width + px;
+		}
 	}
 
 	.page-nav-container {
@@ -28,6 +31,9 @@
 	}
 
 	.modal-container {
+		p {
+			font-size: 14px;
+		}
 		.modal-details {
 			justify-content: flex-start;
 			padding: 0 40px 20px 40px;
@@ -56,10 +62,9 @@
 
 	.modal-container, .modal-background, .modal-background-container {
 		width: 100vw;
-		height: 100vh;
+		min-height: 100vh;
 		top: 0;
 		left: 0;
 		padding-top: 60px;
-		overflow: scroll;
 	}
 }
