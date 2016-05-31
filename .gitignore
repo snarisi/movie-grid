@@ -1,4 +1,4 @@
 node_modules
-config/secrets.js
+server/config/secrets.js
 public/bundle.js
 public/style.css
