@@ -10,7 +10,7 @@ const ngAnnotate = require('gulp-ng-annotate');
 const runSequence = require('run-sequence');
 
 gulp.task('buildJS', () => {
-	return gulp.src(['./client/app/app.js', './client/app/**/*.js'])
+	return gulp.src(['./client/app/main.js', './client/app/**/*.js'])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(concat('bundle.js'))
