@@ -44,13 +44,6 @@ $blur-distance: 10px;
 		height: calculate-height($modal-image-width) + px;
 	}
 
-	.desktop-view {
-		display: block;
-	}
-	.mobile-view {
-		display: none;
-	}
-
 	.modal-details {
 		display: flex;
 		justify-content: center;

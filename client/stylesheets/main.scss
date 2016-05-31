@@ -34,6 +34,13 @@ body {
 	margin: 0 auto;
 }
 
+.desktop-view {
+  display: block;
+}
+.mobile-view {
+  display: none;
+}
+
 .no-margin {
   margin: 0;
 }

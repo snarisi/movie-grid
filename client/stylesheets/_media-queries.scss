@@ -1,6 +1,17 @@
 @media (max-width: 768px) {
+	.mobile-view {
+		display: block;
+	}
+	.desktop-view {
+		display: none;
+	}
+
 	#main {
 		padding: 60px 10px 0 10px;
+	}
+
+	.navbar-container .navbar-items {
+		padding: 0 10px;
 	}
 
 	.movie-container {
@@ -35,13 +46,6 @@
 					}
 				}
 			}
-		}
-
-		.mobile-view {
-			display: block;
-		}
-		.desktop-view {
-			display: none;
 		}
 
 		img {

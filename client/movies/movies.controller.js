@@ -2,7 +2,6 @@
 
 angular.module('movieGrid').controller('MoviesCtrl', function ($scope, movies) {
 	$scope.movies = movies.results;
-	console.log(movies);
 	$scope.page = {
 		current: movies.page,
 		total: movies.total_pages
