@@ -10,7 +10,7 @@ const ngAnnotate = require('gulp-ng-annotate');
 const runSequence = require('run-sequence');
 
 gulp.task('buildJS', () => {
-	return gulp.src(['./client/app.js', './client/**/*.js'])
+	return gulp.src(['./client/app/app.js', './client/app/**/*.js'])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(concat('bundle.js'))
@@ -24,7 +24,7 @@ gulp.task('buildCSS', function () {
   var sassCompilation = sass();
   sassCompilation.on('error', console.error.bind(console));
 
-  return gulp.src('./client/stylesheets/main.scss')
+  return gulp.src('./client/assets/stylesheets/main.scss')
 	  .pipe(plumber({
 	      errorHandler: notify.onError('SASS processing failed! Check your gulp process.')
 	  }))
