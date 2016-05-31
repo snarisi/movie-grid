@@ -16,7 +16,7 @@ angular.module('movieGrid').directive('pageNav', function () {
 				} else {
 					return [curr, curr + 1, curr + 2];
 				}
-			}
+			};
 		}
-	}
-})
+	};
+});

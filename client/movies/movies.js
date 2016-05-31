@@ -8,5 +8,5 @@ angular.module('movieGrid').config(function ($stateProvider) {
 				return Movies.getPage($stateParams.page);
 			}
 		}
-	})
+	});
 });

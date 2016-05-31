@@ -12,7 +12,7 @@ angular.module('movieGrid').controller('MoviesCtrl', function ($scope, movies) {
 		if (!path) return 'images/poster_placeholder.jpg';
 
 		return `http://image.tmdb.org/t/p/w185${path}`;
-	}
+	};
 
 	$scope.modalInfo = {
 		index: null,

@@ -4,7 +4,7 @@ angular.module('movieGrid').directive('navbar', function () {
 		scope: {},
 		templateUrl: 'navbar/navbar.html',
 		link: function (scope, el, attrs) {
-			
+
 		}
-	}
+	};
 });

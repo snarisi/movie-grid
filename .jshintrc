@@ -1,0 +1,8 @@
+{
+	"esversion": 6,
+
+	"browser"       : true,
+	"jasmine"       : true,
+	"mocha"         : true,
+	"node"          : true
+}

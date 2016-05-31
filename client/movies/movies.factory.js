@@ -16,7 +16,7 @@ angular.module('movieGrid').factory('Movies', function ($http, $q) {
 				pageCache[page] = { data: res.data, time: Date.now() };
 				return res.data;
 			});
-	}
+	};
 
 	return factory;
 });

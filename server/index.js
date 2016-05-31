@@ -19,7 +19,7 @@ app.use(require('./config/staticRouting'));
 
 // catch-all route to load index.html
 app.get('*', function (req, res, next) {
-	res.sendFile(path.join(__dirname, '../public/index.html'))
+	res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 // error handling
