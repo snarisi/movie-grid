@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server -w ./server",
-    "test": "mocha --reporter spec \"tests/**/*.js\""
+    "test": "mocha --reporter spec \"tests/**/*.js\"",
+    "postinstall": "gulp build"
   },
   "keywords": [],
   "author": "",
