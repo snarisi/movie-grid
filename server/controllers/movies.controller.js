@@ -1,9 +1,8 @@
 'use strict';
 
 const fetch = require('node-fetch');
-const MOVIE_DB_KEY = require('../config/env').MOVIE_DB_KEY;
-const MAX_AGE = require('../config/env').MAX_AGE;
-
+const MOVIE_DB_KEY = require('../config/secrets').MOVIE_DB_KEY;
+const MAX_AGE = 36000000;
 const cache = {};
 
 const checkCache = function (page) {
